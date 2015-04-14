@@ -5,13 +5,14 @@
 ** Login   <van-de_j@epitech.net>
 **
 ** Started on  Tue Apr 14 10:41:30 2015 jessica van-den-zande
-** Last update Tue Apr 14 10:42:32 2015 jessica van-den-zande
+** Last update Tue Apr 14 17:10:16 2015 jessica van-den-zande
 */
 
 #include "lem.h"
 
 int	main(int ac, char **av, char **env)
 {
-  check_main(ac, av, env);
+  if (check_arg(ac, av, env) == -1)
+    return (my_putstr(2, "Error in main.\n"))
   return (0);
 }

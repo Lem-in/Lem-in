@@ -5,7 +5,7 @@
 ** Login   <andre_n@epitech.net>
 **
 ** Started on  Tue Apr  7 16:35:10 2015 nicolas ANDRE
-** Last update Tue Apr 14 11:19:39 2015 nicolas ANDRE
+** Last update Tue Apr 14 17:27:56 2015 nicolas ANDRE
 */
 
 #include "lem.h"
@@ -14,6 +14,7 @@ int	len(char *str)
 {
   int	i;
 
+  i = 0;
   while (str[i++]);
   return (i - 1);
 }
@@ -34,19 +35,17 @@ void	my_putchar(char c)
   write(1, &c, 1);
 }
 */
-char	*line(char *buff)
+char	*line(char **buff, int x, int y)
 {
-  int	x;
   char	*str;
 
-  x = 0;
-  str = malloc(len(buff));
-  while (buff[x] != '\n')
+  str = malloc(sizeof(buff[x][y]));
+  while (buff[x][y] != '\0')
     {
-      str[x] = buff[x];
-      x++;
+      str[y] = buff[x][y];
+      y++;
     }
-  str[x] = '\0';
+  str[y] = '\0';
   return (str);
 }
 
@@ -66,6 +65,7 @@ int	my_getnbr(char *str)
       res = res + (*str - '0');
       str = str + 1;
     }
+  printf("%d\n", res);
   return (res);
 }
 
@@ -75,13 +75,13 @@ int	nb_fourmi(int nb)
 
   if (nb <= 0)
     {
-      puts("pas de fourmi.\n");
+      puts("pas de fourmi ou trop fourmi.\n");
       exit (0);
     }
-  else if (nb > '0')
+  else if (nb > 0)
     {
       nb_fourmi = nb;
-      printf("%c\n", nb_fourmi);
+      // printf("%d\n", nb_fourmi);
       return ((nb_fourmi));
     }
 }
@@ -91,33 +91,28 @@ char	**file(char *str)
   char	buff[4096];
   int	fd;
   int	c;
-  int	d;
+  int	x;
+  int	y;
   int	pony;
-  char	*str2;
+  char	**tab;
 
   c = 0;
-  d = 0;
+  x = 0;
+  y = 0;
   if ((fd = open(str, O_RDONLY)) == -1)
     puterror("fuck.\n");
   pony = read(fd, buff, 4096);
   buff[pony] = '\0';
   printf("%s\n", buff);
-  my_str_to_wordtab(buff);
-  while (buff[c] != '\0')
+  tab = my_str_to_wordtab(buff);
+  while (tab[x] != NULL || tab[x] != '\0')
     {
-
-      /*
-      if (nb_fourmi(my_getnbr(line(buff))) == 1)
+      if (x == 0)
 	{
-	  puts("a");
-	  puts("y as des fourmi.\n");
-	  c++;
-	  exit(0);
+	  printf("%d\n", nb_fourmi(my_getnbr(line(tab, 0, y))));
+	  //y++;
 	}
-*/
-      c++;
-
-      //      nb_fourmi = buff();
+      x++;
     }
 }
 

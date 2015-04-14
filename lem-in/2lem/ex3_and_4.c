@@ -5,7 +5,7 @@
 ** Login   <andre_n@epitech.net>
 **
 ** Started on  Tue Mar 31 13:54:47 2015 nicolas ANDRE
-** Last update Wed Apr  8 18:01:30 2015 nicolas ANDRE
+** Last update Tue Apr 14 15:43:32 2015 Maxime BOUCHER
 */
 
 #include <stdlib.h>
@@ -52,11 +52,11 @@ int	my_count_word(char *s)
   while (s[i])
     {
       if ((s[i] >= '0' && s[i] <= '9') || (s[i] >= 'A' && s[i] <= 'Z')
-	  || (s[i] >= 'a' && s[i] <= 'z'))
+	  || (s[i] >= 'a' && s[i] <= 'z') || s[i] == '#')
 	{
 	  c++;
 	  while (((s[i] >= '0' && s[i] <= '9') || (s[i] >= 'A' && s[i] <= 'Z')
-		  || (s[i] >= 'a' && s[i] <= 'z')) && s[i] != '\0')
+		  || (s[i] >= 'a' && s[i] <= 'z') || s[i] == '#') && s[i] != '\0')
 	    i++;
 	  if (s[i] == '\0')
 	    return (c);
@@ -75,7 +75,7 @@ int	my_count_char(char *s, int *i)
 
   c = 0;
   while (s[*i] && ((s[*i] >= 'a' && s[*i] <='z'))
-	 || s[*i] && ((s[*i] >= 'A' && s[*i] <='Z')))
+	 || s[*i] && ((s[*i] >= 'A' && s[*i] <='Z')) || s[*i] == '#')
     {
       c++;
       *i = *i + 1;
@@ -131,8 +131,8 @@ void	test_str_to_wordtab(char **str)
       y = 0;
     }
 }
-
+/*
 int	main(int ac, char **av)
 {
   test_str_to_wordtab(my_str_to_word_tab(av[1]));
-}
+  }*/

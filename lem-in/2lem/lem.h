@@ -5,7 +5,7 @@
 ** Login   <andre_n@epitech.net>
 **
 ** Started on  Wed Apr  8 15:18:07 2015 nicolas ANDRE
-** Last update Wed Apr  8 15:45:30 2015 nicolas ANDRE
+** Last update Tue Apr 14 16:59:51 2015 nicolas ANDRE
 */
 
 #ifndef LEM_H_
@@ -23,10 +23,12 @@
 
 int	len(char *);
 int	puterror(char *);
-char	*line(char *);
+char	*line(char **, int, int);
 int	my_getnbr(char *);
 int	nb_fourmi(int);
 char	**file(char *);
 void	my_putstr(char *);
+char	**my_str_to_wordtab(char *);
+char	**my_str_to_word_tab(char *);
 
 #endif /* !LEM_H_ */

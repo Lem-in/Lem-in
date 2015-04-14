@@ -5,13 +5,16 @@
 ** Login   <andre_n@epitech.net>
 **
 ** Started on  Tue Apr  7 11:13:40 2015 nicolas ANDRE
-** Last update Tue Apr  7 11:42:52 2015 nicolas ANDRE
+** Last update Tue Apr 14 14:55:13 2015 Maxime BOUCHER
 */
 
 int	len(char *str)
 {
-  for ((int) i = 0; str[i]; i++);
-  return (i);
+  int	i;
+
+  i = 0;
+  while (str[i++]);
+  return (i - 1);
 }
 
 int	puterror(char *str)
@@ -31,6 +34,7 @@ int	**parser(char **av)
   y = 0;
   if ((fd = open(av, O_RDONLY)) == -1)
     return (puterror("error d'ouverture de fichier.\n"));
+  printf("%s\n", buff);
   while (read(fd, &buff, 1) > 0)
     {
       if (buff != '\n')
