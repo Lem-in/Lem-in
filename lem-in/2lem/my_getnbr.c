@@ -5,10 +5,10 @@
 ** Login   <perrie_s@epitech.net>
 **
 ** Started on  Wed Dec 17 17:13:38 2014 Simon PERRIERE
-** Last update Wed Dec 17 17:13:40 2014 Simon PERRIERE
+** Last update Tue Apr 14 17:42:36 2015 nicolas ANDRE
 */
 
-#include "../Inc/my_lib.h"
+#include "../../lib/Inc/my_lib.h"
 
 int		my_getnbr(char *nbr)
 {

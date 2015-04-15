@@ -1,16 +1,18 @@
 ##
-## Makefile for Makefile in /home/perrie_s/rendu/CPE_2014_lemin
+## Makefile for Makefile in /home/van-de_j/rendu/Prog_Elem/CPE_2014_lemin
 ## 
-## Made by Simon Perriere
-## Login   <perrie_s@epitech.net>
+## Made by jessica van-den-zande
+## Login   <van-de_j@epitech.net>
 ## 
-## Started on  Tue Apr 14 17:18:02 2015 Simon Perriere
-## Last update Tue Apr 14 17:42:04 2015 Simon Perriere
+## Started on  Tue Apr 14 18:01:13 2015 jessica van-den-zande
+## Last update Tue Apr 14 18:20:56 2015 jessica van-den-zande
 ##
 
 CC	=	gcc
 
 RM	=	rm -f
+
+DIR	=	lib/Src
 
 LDFLAGS	+=	-W
 LDFLAGS	+=	-Wall
@@ -19,8 +21,10 @@ LDFLAGS	+=	-Werror
 
 NAME	=	lem_in
 
-SRC	=	main.c		\
-		check_errors.c	\
+SRC	=	main.c			\
+		check_errors.c		\
+		$(DIR)/my_putstr.c	\
+		$(DIR)/my_putchar.c
 
 OBJS	=	$(SRC:.c=.o)
 
@@ -33,11 +37,11 @@ $(NAME):	$(OBJS)
 		@echo -e "           |     |-'"
 		@echo -e "           '.___.'"
 		@echo -e ""
-		@echo -e "\033[35;40m  (\033[34;40m        (\033[30;40m       (\033[32;40m       ("
-		@echo -e "\033[35;40m  ))\033[34;40m       ))\033[30;40m      )) \033[32;40m     ))"
-		@echo -e "\033[35;40m |''|-.\033[34;40m   |''|-.\033[30;40m  |''|-.\033[32;40m  |''|-."
-		@echo -e "\033[35;40m |__|-'\033[34;40m   |__|-'\033[30;40m  |__|-'\033[32;40m  |__|-'"
-		@echo -e "\033[35;40m Jess\033[34;40m     Ayio\033[30;40m    Jesus\033[32;40m   Nico"
+		@echo -e "\033[35;40m  (\033[34;40m        (\033[36;40m       (\033[32;40m       ("
+		@echo -e "\033[35;40m  ))\033[34;40m       ))\033[36;40m      )) \033[32;40m     ))"
+		@echo -e "\033[35;40m |''|-.\033[34;40m   |''|-.\033[36;40m  |''|-.\033[32;40m  |''|-."
+		@echo -e "\033[35;40m |__|-'\033[34;40m   |__|-'\033[36;40m  |__|-'\033[32;40m  |__|-'"
+		@echo -e "\033[35;40m Jess\033[34;40m     Ayio\033[36;40m    Jesus\033[32;40m   Nico"
 
 all:		$(NAME)
 		@echo -e "\033[33;40mExecutable create \033[37;40m"

@@ -5,7 +5,7 @@
 ** Login   <andre_n@epitech.net>
 **
 ** Started on  Tue Apr  7 16:35:10 2015 nicolas ANDRE
-** Last update Tue Apr 14 17:27:56 2015 nicolas ANDRE
+** Last update Tue Apr 14 17:53:48 2015 nicolas ANDRE
 */
 
 #include "lem.h"
@@ -49,7 +49,7 @@ char	*line(char **buff, int x, int y)
   return (str);
 }
 
-
+/*
 int	my_getnbr(char *str)
 {
   int	res;
@@ -67,7 +67,7 @@ int	my_getnbr(char *str)
     }
   printf("%d\n", res);
   return (res);
-}
+  }*/
 
 int	nb_fourmi(int nb)
 {
@@ -75,7 +75,7 @@ int	nb_fourmi(int nb)
 
   if (nb <= 0)
     {
-      puts("pas de fourmi ou trop fourmi.\n");
+      puts("pas de fourmi ou trop de fourmi.\n");
       exit (0);
     }
   else if (nb > 0)

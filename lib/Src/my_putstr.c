@@ -5,7 +5,7 @@
 ** Login   <perrie_s@epitech.net>
 **
 ** Started on  Wed Dec 17 17:20:52 2014 Simon PERRIERE
-** Last update Wed Dec 17 17:20:54 2014 Simon PERRIERE
+** Last update Tue Apr 14 18:17:53 2015 jessica van-den-zande
 */
 
 #include "../Inc/my_lib.h"
@@ -17,26 +17,6 @@ int		my_putstr(int fd, char *str)
   if (fd < 0 || str == NULL || (i = my_strlen(str)) < 0
       || (i != 0 && write(fd, str, i) < 0))
     return (-1);
-  return (1);
-}
-
-int		my_put_ustr(int fd, char *str)
-{
-  int		i;
-
-  i = 0;
-  if (fd < 0 || str == NULL || my_strlen(str) < 0)
-    return (-1);
-  while (str[i] != 0)
-    {
-      if ((str[i] < CHAR_MIN || str[i] >= CHAR_MAX_EXT)
-	  || ((str[i] < CHAR_PRINT_MIN || str[i] >= CHAR_PRINT_MAX)
-	      && my_put_uprintchar(fd, str[i]) < 0)
-	  || ((str[i] >= CHAR_PRINT_MIN && str[i] < CHAR_PRINT_MAX)
-	      && my_putchar(fd, str[i]) < 0))
-	return (-1);
-      ++i;
-    }
   return (1);
 }
 

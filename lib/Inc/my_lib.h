@@ -5,7 +5,7 @@
 ** Login   <perrie_s@epitech.net>
 **
 ** Started on  Wed Dec 17 17:24:57 2014 Simon PERRIERE
-** Last update Wed Dec 17 17:24:59 2014 Simon PERRIERE
+** Last update Tue Apr 14 18:02:15 2015 jessica van-den-zande
 */
 
 #ifndef MY_LIB_H_
@@ -62,18 +62,10 @@
 # define BLANK		""
 
 /*
-** Protoype for my_putchar.c
-*/
-
-int		my_putchar(int, char);
-int		my_put_printchar(int, char);
-int		my_put_extchar(int, char);
-int		my_put_uprintchar(int, char);
-
-/*
 ** Prototype for my_putstr.c
 */
 
+int		my_putchar(int, char);
 int		my_putstr(int, char *);
 int		my_put_ustr(int, char *);
 int		my_put_line(int, char *);

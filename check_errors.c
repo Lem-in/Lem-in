@@ -5,10 +5,11 @@
 ** Login   <van-de_j@epitech.net>
 **
 ** Started on  Tue Apr 14 08:59:26 2015 jessica van-den-zande
-** Last update Tue Apr 14 17:12:30 2015 jessica van-den-zande
+** Last update Tue Apr 14 17:37:54 2015 jessica van-den-zande
 */
 
 #include "lem.h"
+#include "lib/Inc/my_lib.h"
 
 int	check_arg(int ac, char **av, char **env)
 {
