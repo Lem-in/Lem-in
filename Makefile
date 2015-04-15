@@ -5,7 +5,7 @@
 ## Login   <van-de_j@epitech.net>
 ## 
 ## Started on  Tue Apr 14 18:01:13 2015 jessica van-den-zande
-## Last update Tue Apr 14 18:20:56 2015 jessica van-den-zande
+## Last update Wed Apr 15 10:38:40 2015 Simon Perriere
 ##
 
 CC	=	gcc
@@ -41,7 +41,7 @@ $(NAME):	$(OBJS)
 		@echo -e "\033[35;40m  ))\033[34;40m       ))\033[36;40m      )) \033[32;40m     ))"
 		@echo -e "\033[35;40m |''|-.\033[34;40m   |''|-.\033[36;40m  |''|-.\033[32;40m  |''|-."
 		@echo -e "\033[35;40m |__|-'\033[34;40m   |__|-'\033[36;40m  |__|-'\033[32;40m  |__|-'"
-		@echo -e "\033[35;40m Jess\033[34;40m     Ayio\033[36;40m    Jesus\033[32;40m   Nico"
+		@echo -e "\033[35;40m Jess\033[34;40m     Ayio\033[36;40m    Jesus\033[32;40m   Nico\033[37;40m"
 
 all:		$(NAME)
 		@echo -e "\033[33;40mExecutable create \033[37;40m"
