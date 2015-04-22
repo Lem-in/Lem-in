@@ -5,28 +5,11 @@
 ** Login   <andre_n@epitech.net>
 **
 ** Started on  Tue Mar 31 13:54:47 2015 nicolas ANDRE
-** Last update Tue Apr 14 15:43:32 2015 Maxime BOUCHER
+** Last update Wed Apr 22 09:54:56 2015 nicolas ANDRE
 */
 
 #include <stdlib.h>
 #include <stdio.h>
-
-void	my_putchar(char c)
-{
-  write (1, &c, 1);
-}
-
-
-int	len(char *str)
-{
-  int	i;
-
-  i = 0;
-  while (str[i])
-    i++;
-  return (i);
-}
-
 
 char	*my_strdup(char *src)
 {

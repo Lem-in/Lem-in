@@ -5,7 +5,7 @@
 ## Login   <van-de_j@epitech.net>
 ## 
 ## Started on  Tue Apr 14 18:01:13 2015 jessica van-den-zande
-## Last update Wed Apr 15 10:38:40 2015 Simon Perriere
+## Last update Tue Apr 21 18:44:39 2015 jessica van-den-zande
 ##
 
 CC	=	gcc
@@ -23,6 +23,7 @@ NAME	=	lem_in
 
 SRC	=	main.c			\
 		check_errors.c		\
+		manage_file.c		\
 		$(DIR)/my_putstr.c	\
 		$(DIR)/my_putchar.c
 
@@ -30,6 +31,7 @@ OBJS	=	$(SRC:.c=.o)
 
 $(NAME):	$(OBJS)
 		$(CC) $(OBJS) -o $(NAME)
+	 	@echo -e " "
 		@echo -e "\033[31;40mCompilation complete \033[37;40m"
 		@echo -e "\033[31;40m          __.-n-."
 		@echo -e "          \|'---'|-,"
@@ -41,7 +43,8 @@ $(NAME):	$(OBJS)
 		@echo -e "\033[35;40m  ))\033[34;40m       ))\033[36;40m      )) \033[32;40m     ))"
 		@echo -e "\033[35;40m |''|-.\033[34;40m   |''|-.\033[36;40m  |''|-.\033[32;40m  |''|-."
 		@echo -e "\033[35;40m |__|-'\033[34;40m   |__|-'\033[36;40m  |__|-'\033[32;40m  |__|-'"
-		@echo -e "\033[35;40m Jess\033[34;40m     Ayio\033[36;40m    Jesus\033[32;40m   Nico\033[37;40m"
+		@echo -e "\033[35;40m Jess\033[34;40m     Ayio\033[36;40m    Jesus\033[32;40m   Nico"
+		@echo -e " "
 
 all:		$(NAME)
 		@echo -e "\033[33;40mExecutable create \033[37;40m"

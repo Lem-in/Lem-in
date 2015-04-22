@@ -5,36 +5,13 @@
 ** Login   <andre_n@epitech.net>
 **
 ** Started on  Tue Apr  7 16:35:10 2015 nicolas ANDRE
-** Last update Tue Apr 14 17:53:48 2015 nicolas ANDRE
+** Last update Wed Apr 22 13:59:33 2015 nicolas ANDRE
 */
 
 #include "lem.h"
 
-int	len(char *str)
-{
-  int	i;
+int	check_mot(char *);
 
-  i = 0;
-  while (str[i++]);
-  return (i - 1);
-}
-
-int	puterror(char *str)
-{
-  write(2, str, len(str));
-  return (-1);
-}
-
-void	my_putstr(char *str)
-{
-  write(1, str, len(str));
-}
-/*
-void	my_putchar(char c)
-{
-  write(1, &c, 1);
-}
-*/
 char	*line(char **buff, int x, int y)
 {
   char	*str;
@@ -49,41 +26,54 @@ char	*line(char **buff, int x, int y)
   return (str);
 }
 
+int	nb_mot(char *str)
+{
+  int	c;
+  int	i;
+
+  i = 0;
+  c = 0;
+  while (str[i] != '\0')
+    {
+      while ((str[i] >= 'a' && str[i] <= 'z')
+	     && (str[i] >= 'A' && str[i] <= 'Z')
+	     && (str[i] >= '0' && str[i] <= '9'))
+	{
+	  c++;
+
+	}
+    }
+  printf("%d\n", c);
+  return (c);
+}
+
 /*
-int	my_getnbr(char *str)
+int	check_error_coordonne(char *str)
 {
-  int	res;
+  int	i;
 
-  res = 0;
-  if (*str == '-')
-    return (-my_getnbr(str + 1));
-  if (*str == '+')
-    return (my_getnbr(str + 1));
-  while (*str && (str[0] >= '0' && str[0] <= '9'))
+  i = 0;
+  while (str[i] != '\0')
     {
-      res = res * 10;
-      res = res + (*str - '0');
-      str = str + 1;
+      if (str[i] == ' ')
+	{
+	  i++;
+	  while (str[i])
+	}
+      i++;
     }
-  printf("%d\n", res);
-  return (res);
-  }*/
+    }*/
 
-int	nb_fourmi(int nb)
+int	command(char *str)
 {
-  int	nb_fourmi;
-
-  if (nb <= 0)
-    {
-      puts("pas de fourmi ou trop de fourmi.\n");
-      exit (0);
-    }
-  else if (nb > 0)
-    {
-      nb_fourmi = nb;
-      // printf("%d\n", nb_fourmi);
-      return ((nb_fourmi));
-    }
+  if (strncmp(str, "##start", 7) == 0)
+    return (1);
+  else if (strncmp(str, "##end", 5) == 0)
+    return (2);
+  else if (str[0] == '#' && str[1] != '#')
+    return (3);
+  else
+    return (4);
 }
 
 char	**file(char *str)
@@ -101,17 +91,37 @@ char	**file(char *str)
   y = 0;
   if ((fd = open(str, O_RDONLY)) == -1)
     puterror("fuck.\n");
-  pony = read(fd, buff, 4096);
+  pony = read(fd, buff, 4095);
   buff[pony] = '\0';
   printf("%s\n", buff);
   tab = my_str_to_wordtab(buff);
   while (tab[x] != NULL || tab[x] != '\0')
     {
-      if (x == 0)
+      if (nb_fourmi(my_getnbr(line(tab, 0, y))) > 0)
+	{
+	  printf("il y a %d fourmi.\n ")
+	}
+      /*if (x == 0)
 	{
 	  printf("%d\n", nb_fourmi(my_getnbr(line(tab, 0, y))));
-	  //y++;
+	  x++;
+	  }*/
+      if (x == 21)
+	{
+	  printf("%s\n", line(tab, x, y));
+	  //	  nb_mot(line(tab, x, y));
 	}
+      if (command(line(tab, x, y)) == 1)
+	{
+	  puts("command de depart.\n");
+	  x++;
+	}
+      if (command(line(tab, x, y)) == 2)
+	  puts("command de fin.\n");
+      if (command(line(tab, x, y)) == 3)
+	puts("commentaire.\n");
+      if (command(line(tab, x, y)) == 4)
+      puts("nom de la salle ainsi que s'est coordonnée.\n");
       x++;
     }
 }

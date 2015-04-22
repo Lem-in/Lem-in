@@ -5,7 +5,7 @@
 ** Login   <van-de_j@epitech.net>
 **
 ** Started on  Tue Mar 31 15:43:25 2015 jessica van-den-zande
-** Last update Tue Apr 14 15:57:27 2015 nicolas ANDRE
+** Last update Tue Apr 21 20:34:19 2015 nicolas ANDRE
 */
 
 #include "lem.h"
@@ -52,11 +52,13 @@ char	**fill_tab(char *str, int pos, char **tab)
       y = 0;
       while (((str[pos] >= 'A' && str[pos] <= 'Z')
 	      || (str[pos] >= 'a' && str[pos] <= 'z')
-	      || (str[pos] >= '0' && str[pos] <= '9')) && str[pos])
+	      || (str[pos] >= '0' && str[pos] <= '9')
+	      || str[pos] == '#') && str[pos])
 	tab[x][y++] = str[pos++];
       while (((str[pos] < 'A' || str[pos] > 'Z')
 	      && (str[pos] < 'a' || str[pos] > 'z')
-	      && (str[pos] < '0' || str[pos] > '9')) && str[pos])
+	      && (str[pos] < '0' || str[pos] > '9')
+	      && str[pos] != '#') && str[pos])
 	{
 	  pos++;
 	}
@@ -66,6 +68,7 @@ char	**fill_tab(char *str, int pos, char **tab)
   tab[x] = NULL;
   return (tab);
 }
+
 char	**my_str_to_wordtab(char *str)
 {
   int	count_word;

@@ -1,7 +1,0 @@
- - Check arguments main.
- - /!\ Vérifier le retour de CHAQUE fonction /!\
- - Touver le chemin le plus court : liste chaînée + matrice => Faire
- matrice² pour trouver chemin le plus court
- - Ajouter interface graphique.
- - /!\ Si compilation avec le -g (pour valgrind), penser à l'enlever /!\
- - Penser à RM ce fichier pour le push final ;)
